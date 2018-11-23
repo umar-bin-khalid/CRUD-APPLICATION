@@ -1,0 +1,48 @@
+
+{% extends "CrudAssignment/index.html" %}
+{% block content %}
+<div id="site_content">
+
+
+      <div id="content">
+        <!-- insert the page content here -->
+        <h1> Delete data from the Dataset </h1>
+
+<h4> If you want to delete the column , select column name from the following list. </h4>
+<form method="GET" action="/delete/ ">
+<div class="form-group">
+    <select name="colName"  type="text" required>
+        <option value="">Select column name</option>
+        <option>REF_DATE</option>
+        <option>GEO</option>
+        <option>DGUID</option>
+        <option>Food categories</option>
+        <option>Commodity</option>
+        <option>UOM</option>
+        <option>UOM_ID</option>
+        <option>SCALAR_FACTOR</option>
+        <option>SCALAR_ID</option>
+        <option>VECTOR</option>
+        <option>COORDINATE</option>
+        <option>VALUE</option>
+        <option>STATUS</option>
+        <option>SYMBOL</option>
+        <option>TERMINATED</option>
+        <option>DECIMALS</option>
+
+    </select>
+    <button type="submit" class="search-button" value="Search" name="del">Click to Delete</button>
+  </div>
+  </form>
+  <br>
+{% if dataHtml %}
+ <h3> Results after deleting data from Dataset</h3>
+ {{ dataHtml | safe }}
+{% endif %}
+
+
+    </div>
+  </div>
+
+
+{% endblock %}

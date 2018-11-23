@@ -1,0 +1,69 @@
+
+{% extends "CrudAssignment/index.html" %}
+{% block content %}
+
+<div id="site_content">
+
+
+      <div id="content">
+        <!-- insert the page content here -->
+
+        <h4> Updating column names from the given dataset </h4>
+ <form method="GET" action="/update/ ">
+ 				{% csrf_token %}
+
+                           <div >
+                               <select  name="oldName"  type="search" required>
+                                   <option value="">Select column</option>
+                                   <option>REF_DATE</option>
+                                   <option>GEO</option>
+                                   <option>DGUID</option>
+                                   <option>Food categories</option>
+                                   <option>Commodity</option>
+                                   <option>UOM</option>
+ 								                   <option>UOM_ID</option>
+                                   <option>SCALAR_FACTOR</option>
+                                   <option>SCALAR_ID</option>
+                                   <option>VECTOR</option>
+                                   <option>COORDINATE</option>
+                                   <option>VALUE</option>
+                                   <option>STATUS</option>
+                                   <option>SYMBOL</option>
+                                   <option>TERMINATED</option>
+                                   <option>DECIMALS</option>
+
+                               </select>
+
+                             </div>
+<br>
+
+<p>Change the column name to your specific choice:</p>
+<div class="form-group">
+        <input placeholder="&nbsp; Enter New Name" type="text" name="newname" required="required" ></input>
+</div>
+
+
+<br>
+<br>
+<div class="form-group">
+
+ <button type="submit" class="search-button" value="Search" name="updt">Change column name</button>
+</div>
+
+
+
+
+          </form>
+
+
+
+{% if updatedResult %}
+  <h3> The updated column name is as follow </h3>
+  {{ updatedResult }}
+
+  {% endif %}
+
+    </div>
+
+</div>
+{% endblock %}

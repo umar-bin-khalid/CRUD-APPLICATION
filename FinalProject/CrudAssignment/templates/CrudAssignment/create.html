@@ -1,0 +1,36 @@
+
+{% extends "CrudAssignment/index.html" %}
+{% block content %}
+
+<div id="site_content">
+
+
+      <div id="content">
+        <!-- insert the page content here -->
+        <h3> Create New column names and Values in dataset </h3>
+    <form method="GET" action="/create/">
+    <div class="form-group">
+
+      <div class="form-group">
+        <input placeholder="&nbsp;Enter New Column Name" type="text" name="newname" required="required" >  </input>
+
+      </div>
+    <br><br>
+        <div class="form-group">
+          <input placeholder="&nbsp;Enter Column Value" type="text" name="newval" required="required" ></input>
+
+        </div>
+    <br> <br>
+    <button type="submit" class="search-button" value="Search" name="crt">Click to add column and its particular value</button>
+    </div>
+    </form>
+
+    {% if dataHtml %}
+        <h4> Dataset Updated. Visit the file</h4>
+
+    {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}
